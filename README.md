@@ -4,7 +4,7 @@ Project created in the OmniStack Week 11
 
 ## Stack
 
-- **Backend**: Node.js / MongoDB;
+- **Backend**: Node.js / SQLite;
 - **Frontend**: ReactJS;
 - **Mobile**: React Native;
 
