@@ -5,12 +5,24 @@ module.exports = {
     const PAGE_LIMIT = 5;
     const { page = 1 } = req.query;
 
+    const SELECT_FIELDS = [
+      'incidents.*',
+      'ongs.name',
+      'ongs.email',
+      'ongs.whatsapp',
+      'ongs.city',
+      'ongs.uf'
+    ];
+
+    const currentOffset = (page - 1) * PAGE_LIMIT;
+
     const [count] = await connection('incidents').count();
 
     const incidents = await connection('incidents')
+      .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
       .limit(PAGE_LIMIT)
-      .offset((page - 1) * PAGE_LIMIT)
-      .select('*');
+      .offset(currentOffset)
+      .select(SELECT_FIELDS);
 
     res.header('X-Total-Count', count['count(*)']);
 
