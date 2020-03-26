@@ -10,7 +10,7 @@ Project created in the OmniStack Week 11
 
 ## Docs
 
-- [Backend Entities](docs/backend-entities);
+- [Backend Entities](docs/backend-entities.md);
 
 ## Thanks To
 
