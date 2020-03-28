@@ -1,40 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 
-import {
-  LogonContainer,
-  Wrapper,
-  FormLogon,
-  Title,
-  RegisterLink,
-  RegisterIcon
-} from './styled';
+import Styled from './styled';
 
 import logoImg from 'assets/logo.svg';
 import heroesImg from 'assets/heroes.png';
 
 export default function Logon() {
   return (
-    <LogonContainer>
-      <Wrapper>
+    <Styled.Container>
+      <Styled.Wrapper>
         <img src={logoImg} alt="Be The Hero" />
 
-        <FormLogon>
-          <Title>Faça seu logon</Title>
-
+        <Styled.Form>
+          <Styled.Title>Faça seu logon</Styled.Title>
           <input placeholder="Sua ID" />
           <button className="button" type="submit">
             Entrar
           </button>
-
-          <RegisterLink href="/register">
-            <RegisterIcon component={<FiLogIn size={16} color="#E02041" />} />
+          <Styled.Link component={<Link to="/register" />}>
+            <Styled.Icon>
+              <FiLogIn size={16} color="#E02041" />
+            </Styled.Icon>
             Não tenho cadastro
-          </RegisterLink>
-        </FormLogon>
-      </Wrapper>
+          </Styled.Link>
+        </Styled.Form>
+      </Styled.Wrapper>
 
       <img src={heroesImg} alt="Heroes" />
-    </LogonContainer>
+    </Styled.Container>
   );
 }

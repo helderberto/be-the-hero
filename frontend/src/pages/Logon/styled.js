@@ -5,12 +5,12 @@ import Color from 'styles/colors';
 import Typography from 'styles/typography';
 import Vars from 'styles/variables';
 
-export const Title = styled.h1`
+const Title = styled.h1`
   font-size: 32px;
   margin-bottom: 32px;
 `;
 
-export const LogonContainer = styled.div`
+const Container = styled.div`
   width: 100%;
   max-width: ${Vars.maxWidths.xl};
   height: 100vh;
@@ -20,17 +20,19 @@ export const LogonContainer = styled.div`
   justify-content: center;
 `;
 
-export const Wrapper = styled.section`
+const Wrapper = styled.section`
   width: 100%;
   max-width: 350px;
   margin-right: 30px;
 `;
 
-export const FormLogon = styled.form`
+const Form = styled.form`
   margin-top: 100px;
 `;
 
-export const RegisterLink = styled.a`
+const Link = styled(({ component, ...props }) =>
+  cloneElement(component, props)
+)`
   display: flex;
   align-items: center;
   margin-top: 40px;
@@ -45,8 +47,15 @@ export const RegisterLink = styled.a`
   }
 `;
 
-export const RegisterIcon = styled(({ component, ...props }) =>
-  cloneElement(component, props)
-)`
+const Icon = styled(({ children, ...props }) => cloneElement(children, props))`
   margin-right: 8px;
 `;
+
+export default {
+  Title,
+  Container,
+  Wrapper,
+  Form,
+  Link,
+  Icon
+};
