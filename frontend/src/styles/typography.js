@@ -10,7 +10,8 @@ const Typography = {
   // FONT SIZE
   primarySize: '1.4rem',
   size18: '1.8rem',
-  size16: '1.6rem'
+  size16: '1.6rem',
+  size32: '3.2rem'
 };
 
 export default Typography;
