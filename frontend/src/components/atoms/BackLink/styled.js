@@ -23,8 +23,8 @@ export const Link = styled(({ component, ...props }) =>
   }
 `;
 
-export const Icon = styled(({ children, ...props }) =>
-  cloneElement(children, props)
+export const Icon = styled(({ component, ...props }) =>
+  cloneElement(component, props)
 )`
   margin-right: 8px;
 `;

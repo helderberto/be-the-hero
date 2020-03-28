@@ -16,15 +16,16 @@ const iconProps = {
 };
 
 export default function BackLink({ to, text, type }) {
+  const iconEl =
+    type === TYPES.register ? (
+      <FiLogIn {...iconProps} />
+    ) : (
+      <FiArrowLeft {...iconProps} />
+    );
+
   return (
     <Styled.Link component={<Link to={to} />}>
-      <Styled.Icon>
-        {type === TYPES.register ? (
-          <FiLogIn {...iconProps} />
-        ) : (
-          <FiArrowLeft {...iconProps} />
-        )}
-      </Styled.Icon>
+      <Styled.Icon component={iconEl} />
 
       {text}
     </Styled.Link>
