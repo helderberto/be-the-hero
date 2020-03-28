@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 import Vars from 'styles/variables';
+import Typography from 'styles/typography';
 
 const Styled = {};
 
 Styled.Title = styled.h1`
-  font-size: 32px;
+  font-size: ${Typography.size32};
   margin-bottom: 32px;
 `;
 
@@ -16,7 +17,7 @@ Styled.Container = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 Styled.Wrapper = styled.section`
