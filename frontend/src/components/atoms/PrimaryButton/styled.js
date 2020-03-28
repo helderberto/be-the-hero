@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import Color from 'styles/colors';
 import Typography from 'styles/typography';
 
-const Styled = {};
-
-Styled.Button = styled.button`
+export const Button = styled.button`
   width: 100%;
   height: 60px;
   background: ${Color.red};
@@ -24,5 +22,3 @@ Styled.Button = styled.button`
     filter: brightness(90%);
   }
 `;
-
-export default Styled;

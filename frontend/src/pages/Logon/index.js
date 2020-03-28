@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Styled from './styled';
+import * as Styled from './styled';
 import { BackLink, PrimaryButton } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';

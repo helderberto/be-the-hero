@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FiLogIn, FiArrowLeft } from 'react-icons/fi';
 
-import Styled, { ICON_COLOR } from './styled';
+import * as Styled from './styled';
 
 const TYPES = {
   register: 'register',
@@ -12,7 +12,7 @@ const TYPES = {
 
 const iconProps = {
   size: 16,
-  color: ICON_COLOR
+  color: Styled.ICON_COLOR
 };
 
 export default function BackLink({ to, text, type }) {

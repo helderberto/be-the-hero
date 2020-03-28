@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import Vars from 'styles/variables';
 import Typography from 'styles/typography';
 
-const Styled = {};
-
-Styled.Title = styled.h1`
+export const Title = styled.h1`
   font-size: ${Typography.size32};
   margin-bottom: 32px;
 `;
 
-Styled.Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   max-width: ${Vars.maxWidths.xl};
   height: 100vh;
@@ -20,14 +18,12 @@ Styled.Container = styled.div`
   justify-content: space-between;
 `;
 
-Styled.Wrapper = styled.section`
+export const Wrapper = styled.section`
   width: 100%;
   max-width: 350px;
   margin-right: 30px;
 `;
 
-Styled.Form = styled.form`
+export const Form = styled.form`
   margin-top: 100px;
 `;
-
-export default Styled;

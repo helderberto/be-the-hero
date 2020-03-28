@@ -6,9 +6,7 @@ import Typography from 'styles/typography';
 
 export const ICON_COLOR = Color.red;
 
-const Styled = {};
-
-Styled.Link = styled(({ component, ...props }) =>
+export const Link = styled(({ component, ...props }) =>
   cloneElement(component, props)
 )`
   display: flex;
@@ -25,8 +23,8 @@ Styled.Link = styled(({ component, ...props }) =>
   }
 `;
 
-Styled.Icon = styled(({ children, ...props }) => cloneElement(children, props))`
+export const Icon = styled(({ children, ...props }) =>
+  cloneElement(children, props)
+)`
   margin-right: 8px;
 `;
-
-export default Styled;

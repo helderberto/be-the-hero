@@ -4,9 +4,7 @@ import Vars from 'styles/variables';
 import Color from 'styles/colors';
 import Typography from 'styles/typography';
 
-const Styled = {};
-
-Styled.Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   max-width: ${Vars.maxWidths.xl};
   height: 100vh;
@@ -16,7 +14,7 @@ Styled.Container = styled.div`
   justify-content: center;
 `;
 
-Styled.Content = styled.div`
+export const Content = styled.div`
   width: 100%;
   padding: 96px;
   background: ${Color.gray[1]};
@@ -27,38 +25,36 @@ Styled.Content = styled.div`
   align-items: center;
 `;
 
-Styled.Section = styled.section`
+export const Section = styled.section`
   width: 100%;
   max-width: 380px;
 `;
 
-Styled.Title = styled.h1`
+export const Title = styled.h1`
   font-size: ${Typography.size32};
   margin: 64px 0 32px;
 `;
 
-Styled.Paragraph = styled.p`
+export const Paragraph = styled.p`
   font-size: ${Typography.size18};
   color: ${Color.gray[4]};
   line-height: ${Typography.size32};
 `;
 
-Styled.Form = styled.form`
+export const Form = styled.form`
   width: 100%;
   max-width: 450px;
 `;
 
-Styled.Input = styled.input`
+export const Input = styled.input`
   margin-top: 8px;
 `;
 
-Styled.InputGroup = styled.div`
+export const InputGroup = styled.div`
   display: flex;
 `;
 
-Styled.InputUf = styled(Styled.Input)`
+export const InputUf = styled(Input)`
   margin-left: 8px;
   max-width: 80px;
 `;
-
-export default Styled;
