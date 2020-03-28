@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import Color from 'styles/colors';
 import Typography from 'styles/typography';
 
-const Button = styled.button`
+const Styled = {};
+
+Styled.Button = styled.button`
   width: 100%;
   height: 60px;
   background: ${Color.red};
@@ -23,6 +25,4 @@ const Button = styled.button`
   }
 `;
 
-export default {
-  Button
-};
+export default Styled;
