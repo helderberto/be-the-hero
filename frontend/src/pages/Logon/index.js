@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
 
 import Styled from './styled';
+import { BackLink } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';
 import heroesImg from 'assets/heroes.png';
@@ -19,12 +18,8 @@ export default function Logon() {
           <button className="button" type="submit">
             Entrar
           </button>
-          <Styled.Link component={<Link to="/register" />}>
-            <Styled.Icon>
-              <FiLogIn size={16} color="#E02041" />
-            </Styled.Icon>
-            Não tenho cadastro
-          </Styled.Link>
+
+          <BackLink to="/register" text="Não tenho cadastro" />
         </Styled.Form>
       </Styled.Wrapper>
 

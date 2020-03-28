@@ -1,8 +1,5 @@
-import { cloneElement } from 'react';
 import styled from 'styled-components';
 
-import Color from 'styles/colors';
-import Typography from 'styles/typography';
 import Vars from 'styles/variables';
 
 const Title = styled.h1`
@@ -30,32 +27,9 @@ const Form = styled.form`
   margin-top: 100px;
 `;
 
-const Link = styled(({ component, ...props }) =>
-  cloneElement(component, props)
-)`
-  display: flex;
-  align-items: center;
-  margin-top: 40px;
-  color: ${Color.gray[3]};
-  font-size: ${Typography.size18};
-  text-decoration: none;
-  font-weight: ${Typography.weightMedium};
-  transiton: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-const Icon = styled(({ children, ...props }) => cloneElement(children, props))`
-  margin-right: 8px;
-`;
-
 export default {
   Title,
   Container,
   Wrapper,
-  Form,
-  Link,
-  Icon
+  Form
 };
