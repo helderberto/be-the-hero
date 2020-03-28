@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Styled from './styled';
-import { BackLink } from 'components/atoms';
+import { BackLink, PrimaryButton } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';
 import heroesImg from 'assets/heroes.png';
@@ -15,9 +15,8 @@ export default function Logon() {
         <Styled.Form>
           <Styled.Title>Faça seu logon</Styled.Title>
           <input placeholder="Sua ID" />
-          <button className="button" type="submit">
-            Entrar
-          </button>
+
+          <PrimaryButton text="Entrar" type="submit" />
 
           <BackLink to="/register" text="Não tenho cadastro" />
         </Styled.Form>
