@@ -1,12 +1,12 @@
 # Be The Hero - OmniStack Week 11
 
-Project created in the OmniStack Week 11
+> Project developed in the week OmniStack 11
 
 ## Stack
 
 - **Backend**: Node.js / SQLite;
-- **Frontend**: ReactJS;
-- **Mobile**: React Native;
+- **Frontend**: ReactJS / Styled Components;
+- **Mobile**: React Native / Styled Components;
 
 ## Docs
 
