@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Styled from './styled';
-import { BackLink, PrimaryButton } from 'components/atoms';
+import { IconLink, PrimaryButton } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';
 
@@ -19,7 +19,9 @@ export default function Register() {
             os casos da sua ONG.
           </Styled.Paragraph>
 
-          <BackLink type="back" to="/" text="Voltar ao Logon" />
+          <IconLink to="/" type="back">
+            Voltar ao Logon
+          </IconLink>
         </Styled.Section>
 
         <Styled.Form>
