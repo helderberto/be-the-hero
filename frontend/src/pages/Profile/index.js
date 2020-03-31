@@ -1,22 +1,84 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FiPower } from 'react-icons/fi';
+
+import { IconPower, IconTrash } from 'components/atoms';
+import * as S from './styled';
 
 import logoImg from 'assets/logo.svg';
 
 export default function Profile() {
   return (
-    <div>
-      <header>
-        <img src={logoImg} alt="Be The Hero" />
-        <span>Bem vindo(a), APAD</span>
+    <S.Container>
+      <S.Header>
+        <S.Logo src={logoImg} alt="Be The Hero" />
+        <S.Tag>Bem vindo(a), APAD</S.Tag>
 
-        <Link to="/incidents/new">Cadastrar novo caso</Link>
+        <S.RegisterLink to="/incidents/new">Cadastrar novo caso</S.RegisterLink>
 
-        <button type="button">
-          <FiPower size={18} color="#E02041" />
-        </button>
-      </header>
-    </div>
+        <S.PowerButton type="button">
+          <IconPower size={18} />
+        </S.PowerButton>
+      </S.Header>
+
+      <S.Title>Casos Cadastrados</S.Title>
+
+      <S.IncidentContainer>
+        <S.IncidentItem>
+          <S.IncidentLabel>CASO:</S.IncidentLabel>
+          <S.IncidentText>Caso teste</S.IncidentText>
+
+          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
+          <S.IncidentText>Descrição teste</S.IncidentText>
+
+          <S.IncidentLabel>VALOR:</S.IncidentLabel>
+          <S.IncidentText>R$ 120,00</S.IncidentText>
+
+          <S.IncidentButton type="button">
+            <IconTrash size={20} color="#a8a8b3" />
+          </S.IncidentButton>
+        </S.IncidentItem>
+        <S.IncidentItem>
+          <S.IncidentLabel>CASO:</S.IncidentLabel>
+          <S.IncidentText>Caso teste</S.IncidentText>
+
+          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
+          <S.IncidentText>Descrição teste</S.IncidentText>
+
+          <S.IncidentLabel>VALOR:</S.IncidentLabel>
+          <S.IncidentText>R$ 120,00</S.IncidentText>
+
+          <S.IncidentButton type="button">
+            <IconTrash size={20} color="#a8a8b3" />
+          </S.IncidentButton>
+        </S.IncidentItem>
+        <S.IncidentItem>
+          <S.IncidentLabel>CASO:</S.IncidentLabel>
+          <S.IncidentText>Caso teste</S.IncidentText>
+
+          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
+          <S.IncidentText>Descrição teste</S.IncidentText>
+
+          <S.IncidentLabel>VALOR:</S.IncidentLabel>
+          <S.IncidentText>R$ 120,00</S.IncidentText>
+
+          <S.IncidentButton type="button">
+            <IconTrash size={20} color="#a8a8b3" />
+          </S.IncidentButton>
+        </S.IncidentItem>
+        <S.IncidentItem>
+          <S.IncidentLabel>CASO:</S.IncidentLabel>
+          <S.IncidentText>Caso teste</S.IncidentText>
+
+          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
+          <S.IncidentText>Descrição teste</S.IncidentText>
+
+          <S.IncidentLabel>VALOR:</S.IncidentLabel>
+          <S.IncidentText>R$ 120,00</S.IncidentText>
+
+          <S.IncidentButton type="button">
+            <IconTrash size={20} color="#a8a8b3" />
+          </S.IncidentButton>
+        </S.IncidentItem>
+      </S.IncidentContainer>
+    </S.Container>
   );
 }
