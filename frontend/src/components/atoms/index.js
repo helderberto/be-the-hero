@@ -1,6 +1,3 @@
-export { default as Link } from './Links/Link';
-export { default as IconLink } from './Links/IconLink';
-export { default as PrimaryButton } from './PrimaryButton';
-export { default as IconBack } from './Icons/IconBack';
-export { default as IconPower } from './Icons/IconPower';
-export { default as IconLogIn } from './Icons/IconLogIn';
+export { Link, IconLink } from './Links';
+export { IconBack, IconPower, IconLogIn } from './Icons';
+export { default as Button } from './Button';
