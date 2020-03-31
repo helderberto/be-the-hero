@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Styled from './styled';
-import { IconLink, PrimaryButton } from 'components/atoms';
+import { IconLink, Button } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';
 
@@ -34,7 +34,7 @@ export default function Register() {
             <Styled.InputUf placeholder="UF" />
           </Styled.InputGroup>
 
-          <PrimaryButton text="Cadastrar" type="submit" />
+          <Button type="submit">Cadastrar</Button>
         </Styled.Form>
       </Styled.Content>
     </Styled.Container>
