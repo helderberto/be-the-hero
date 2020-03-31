@@ -1,42 +1,42 @@
 import React from 'react';
 
-import * as Styled from './styled';
+import * as S from './styled';
 import { IconLink, Button } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';
 
 export default function Register() {
   return (
-    <Styled.Container>
-      <Styled.Content>
-        <Styled.Section>
+    <S.Container>
+      <S.Content>
+        <S.Section>
           <img src={logoImg} alt="Be The Hero" />
 
-          <Styled.Title>Cadastro</Styled.Title>
+          <S.Title>Cadastro</S.Title>
 
-          <Styled.Paragraph>
+          <S.Paragraph>
             Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem
             os casos da sua ONG.
-          </Styled.Paragraph>
+          </S.Paragraph>
 
           <IconLink to="/" type="back">
             Voltar ao Logon
           </IconLink>
-        </Styled.Section>
+        </S.Section>
 
-        <Styled.Form>
-          <Styled.Input placeholder="Nome da ONG" />
-          <Styled.Input type="email" placeholder="E-mail" />
-          <Styled.Input placeholder="Whatsapp" />
+        <S.Form>
+          <S.Input placeholder="Nome da ONG" />
+          <S.Input type="email" placeholder="E-mail" />
+          <S.Input placeholder="Whatsapp" />
 
-          <Styled.InputGroup>
-            <Styled.Input placeholder="Cidade" />
-            <Styled.InputUf placeholder="UF" />
-          </Styled.InputGroup>
+          <S.InputGroup>
+            <S.Input placeholder="Cidade" />
+            <S.InputUf placeholder="UF" />
+          </S.InputGroup>
 
           <Button type="submit">Cadastrar</Button>
-        </Styled.Form>
-      </Styled.Content>
-    </Styled.Container>
+        </S.Form>
+      </S.Content>
+    </S.Container>
   );
 }

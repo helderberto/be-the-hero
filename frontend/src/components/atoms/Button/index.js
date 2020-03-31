@@ -1,12 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import * as Styled from './styled';
+import * as S from './styled';
 
 export default function Button({ children, ...props }) {
-  return <Styled.Button {...props}>{children}</Styled.Button>;
+  return <S.Button {...props}>{children}</S.Button>;
 }
-
-Button.propTypes = {
-  text: PropTypes.string.isRequired
-};

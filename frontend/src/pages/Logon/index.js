@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as Styled from './styled';
+import * as S from './styled';
 import { IconLink, Button } from 'components/atoms';
 
 import logoImg from 'assets/logo.svg';
@@ -8,21 +8,21 @@ import heroesImg from 'assets/heroes.png';
 
 export default function Logon() {
   return (
-    <Styled.Container>
-      <Styled.Wrapper>
+    <S.Container>
+      <S.Wrapper>
         <img src={logoImg} alt="Be The Hero" />
 
-        <Styled.Form>
-          <Styled.Title>Faça seu logon</Styled.Title>
+        <S.Form>
+          <S.Title>Faça seu logon</S.Title>
           <input placeholder="Sua ID" />
 
           <Button type="submit">Entrar</Button>
 
           <IconLink to="/register">Não tenho cadastro</IconLink>
-        </Styled.Form>
-      </Styled.Wrapper>
+        </S.Form>
+      </S.Wrapper>
 
       <img src={heroesImg} alt="Heroes" />
-    </Styled.Container>
+    </S.Container>
   );
 }

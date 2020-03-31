@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as Styled from './styled';
+import * as S from './styled';
 
 export default function IconBack() {
-  return <Styled.IconBack />;
+  return <S.IconBack />;
 }

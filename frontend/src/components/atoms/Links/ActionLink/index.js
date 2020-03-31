@@ -1,11 +1,11 @@
 import React from 'react';
 
-import * as Styled from './styled'
+import * as S from './styled';
 
 export default function ActionLink({ to, children, ...rest }) {
   return (
-    <Styled.ActionLink to={to} {...rest}>
+    <S.ActionLink to={to} {...rest}>
       {children}
-    </Styled.ActionLink>
+    </S.ActionLink>
   );
 }
