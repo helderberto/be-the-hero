@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
-import Vars from 'styles/variables';
-import Color from 'styles/colors';
-import Typography from 'styles/typography';
-
 export const Container = styled.div`
   width: 100%;
-  max-width: ${Vars.maxWidths.xl};
+  max-width: ${({ theme: { maxWidths } }) => maxWidths.xl};
   height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -17,7 +13,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: 100%;
   padding: 96px;
-  background: ${Color.gray[1]};
+  background: ${({ theme: { colors } }) => colors.gray[1]};
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;
@@ -31,14 +27,16 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h1`
-  font-size: ${Typography.size32};
+  font-size: ${({ theme: { fontSizes } }) => fontSizes.size32};
   margin: 64px 0 32px;
 `;
 
 export const Paragraph = styled.p`
-  font-size: ${Typography.size18};
-  color: ${Color.gray[4]};
-  line-height: ${Typography.size32};
+  ${({ theme: { colors, fontSizes } }) => `
+    font-size: ${fontSizes.size18};
+    color: ${colors.gray[4]};
+    line-height: ${fontSizes.size32};
+  `}
 `;
 
 export const Form = styled.form`

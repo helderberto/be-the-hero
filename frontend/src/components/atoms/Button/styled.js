@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
-import Color from 'styles/colors';
-import Typography from 'styles/typography';
-
 export const Button = styled.button`
   width: 100%;
   height: 60px;
-  background: ${Color.red};
+  background: ${({ theme }) => theme.colors.red};
   border: 0;
   border-radius: 8px;
-  color: ${Color.white};
-  font-weight: ${Typography.weightBold};
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   margin-top: 16px;
   display: inline-block;
   text-align: center;

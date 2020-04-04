@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
-import Vars from 'styles/variables';
-import Typography from 'styles/typography';
-
 export const Title = styled.h1`
-  font-size: ${Typography.size32};
+  font-size: ${({ theme: { fontSizes } }) => fontSizes.size32};
   margin-bottom: 32px;
 `;
 
 export const Container = styled.div`
   width: 100%;
-  max-width: ${Vars.maxWidths.xl};
+  max-width: ${({ theme: { maxWidths } }) => maxWidths.xl};
   height: 100vh;
   margin: 0 auto;
   display: flex;

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Color from 'styles/colors';
-import Typography from 'styles/typography';
 import { ActionLink } from 'components/atoms';
 
 export const Container = styled.div`
@@ -17,7 +15,7 @@ export const Header = styled.header`
 `;
 
 export const Tag = styled.span`
-  font-size: ${Typography.size18};
+  font-size: ${({ theme: { fontSizes } }) => fontSizes.size18};
   margin-left: 24px;
 `;
 
@@ -35,7 +33,7 @@ export const PowerButton = styled.button`
   height: 60px;
   width: 60px;
   border-radius: 4px;
-  border: 1px solid ${Color.gray[2]};
+  border: 1px solid ${({ theme: { colors } }) => colors.gray[2]};
   background: transparent;
   margin-left: 16px;
   transition: border-color 0.2s;
@@ -78,7 +76,7 @@ export const IncidentButton = styled.button`
 export const IncidentLabel = styled.strong`
   display: block;
   margin-bottom: 16px;
-  color: ${Color.gray[3]};
+  color: ${({ theme: { colors } }) => colors.gray[3]};
 
   &:not(:first-child) {
     margin-top: 32px;
@@ -86,7 +84,9 @@ export const IncidentLabel = styled.strong`
 `;
 
 export const IncidentText = styled.p`
-  color: ${Color.gray[4]};
-  font-size: ${Typography.size16};
-  line-height: ${Typography.size21};
+  ${({ theme: { colors, fontSizes } }) => `
+    color: ${colors.gray[4]};
+    font-size: ${fontSizes.size16};
+    line-height: ${fontSizes.size21};
+  `}
 `;
