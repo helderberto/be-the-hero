@@ -3,6 +3,6 @@ import styled from 'styled-components';
 
 import { commonStyle } from '../common';
 
-export const IconLogIn = styled(FiLogIn)`
+export const IconLogin = styled(FiLogIn)`
   ${commonStyle}
 `;

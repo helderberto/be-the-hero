@@ -1,3 +1,3 @@
-export { default as Link } from './Link';
-export { default as IconLink } from './IconLink';
-export { default as ActionLink } from './ActionLink';
+export * from './Link';
+export * from './IconLink';
+export * from './ActionLink';
