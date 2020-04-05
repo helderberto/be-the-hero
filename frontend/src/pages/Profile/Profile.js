@@ -4,10 +4,11 @@ import * as S from './styled';
 import logoImg from 'assets/logo.svg';
 import { Http } from 'interfaces';
 import { Incident } from 'components/molecules';
+import { useHistory } from 'react-router-dom';
 
 function Profile() {
   const [incidents, setIncidents] = useState([]);
-
+  const history = useHistory();
   const ongId = localStorage.getItem('ongId');
   const ongName = localStorage.getItem('ongName');
 
@@ -40,6 +41,11 @@ function Profile() {
     }
   }
 
+  function handleLogout() {
+    localStorage.clear();
+    history.push('/');
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -48,7 +54,7 @@ function Profile() {
 
         <S.RegisterLink to="/incidents/new">Cadastrar novo caso</S.RegisterLink>
 
-        <S.PowerButton type="button">
+        <S.PowerButton type="button" onClick={handleLogout}>
           <IconPower size={18} />
         </S.PowerButton>
       </S.Header>
