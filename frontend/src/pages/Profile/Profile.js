@@ -21,6 +21,25 @@ function Profile() {
     });
   }, [ongId]);
 
+  async function handleRemoveIncident(id) {
+    if (window.confirm(`Você confirma a exclusão do incident ${id}?`)) {
+      try {
+        await Http.delete(`incidents/${id}`, {
+          headers: {
+            Authorization: ongId,
+          },
+        });
+
+        alert('O incidente foi removido com sucesso!');
+
+        const newIncidents = incidents.filter((incident) => incident.id !== id);
+        setIncidents(newIncidents);
+      } catch (err) {
+        alert('Erro ao deletar caso, tente novamente.');
+      }
+    }
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -43,6 +62,7 @@ function Profile() {
             title={incident.title}
             description={incident.description}
             value={incident.value}
+            onClick={() => handleRemoveIncident(incident.id)}
           />
         ))}
       </S.IncidentContainer>
