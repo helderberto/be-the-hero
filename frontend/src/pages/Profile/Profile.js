@@ -1,14 +1,31 @@
-import React from 'react';
-import { IconPower, IconTrash } from 'components/atoms';
+import React, { useEffect, useState } from 'react';
+import { IconPower } from 'components/atoms';
 import * as S from './styled';
 import logoImg from 'assets/logo.svg';
+import { Http } from 'interfaces';
+import { Incident } from 'components/molecules';
 
 function Profile() {
+  const [incidents, setIncidents] = useState([]);
+
+  const ongId = localStorage.getItem('ongId');
+  const ongName = localStorage.getItem('ongName');
+
+  useEffect(() => {
+    Http.get('profile', {
+      headers: {
+        Authorization: ongId,
+      },
+    }).then((response) => {
+      setIncidents(response.data);
+    });
+  }, [ongId]);
+
   return (
     <S.Container>
       <S.Header>
         <S.Logo src={logoImg} alt="Be The Hero" />
-        <S.Tag>Bem vindo(a), APAD</S.Tag>
+        <S.Tag>Bem vindo(a), {ongName}</S.Tag>
 
         <S.RegisterLink to="/incidents/new">Cadastrar novo caso</S.RegisterLink>
 
@@ -20,62 +37,14 @@ function Profile() {
       <S.Title>Casos Cadastrados</S.Title>
 
       <S.IncidentContainer>
-        <S.IncidentItem>
-          <S.IncidentLabel>CASO:</S.IncidentLabel>
-          <S.IncidentText>Caso teste</S.IncidentText>
-
-          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
-          <S.IncidentText>Descrição teste</S.IncidentText>
-
-          <S.IncidentLabel>VALOR:</S.IncidentLabel>
-          <S.IncidentText>R$ 120,00</S.IncidentText>
-
-          <S.IncidentButton type="button">
-            <IconTrash size={20} color="#a8a8b3" />
-          </S.IncidentButton>
-        </S.IncidentItem>
-        <S.IncidentItem>
-          <S.IncidentLabel>CASO:</S.IncidentLabel>
-          <S.IncidentText>Caso teste</S.IncidentText>
-
-          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
-          <S.IncidentText>Descrição teste</S.IncidentText>
-
-          <S.IncidentLabel>VALOR:</S.IncidentLabel>
-          <S.IncidentText>R$ 120,00</S.IncidentText>
-
-          <S.IncidentButton type="button">
-            <IconTrash size={20} color="#a8a8b3" />
-          </S.IncidentButton>
-        </S.IncidentItem>
-        <S.IncidentItem>
-          <S.IncidentLabel>CASO:</S.IncidentLabel>
-          <S.IncidentText>Caso teste</S.IncidentText>
-
-          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
-          <S.IncidentText>Descrição teste</S.IncidentText>
-
-          <S.IncidentLabel>VALOR:</S.IncidentLabel>
-          <S.IncidentText>R$ 120,00</S.IncidentText>
-
-          <S.IncidentButton type="button">
-            <IconTrash size={20} color="#a8a8b3" />
-          </S.IncidentButton>
-        </S.IncidentItem>
-        <S.IncidentItem>
-          <S.IncidentLabel>CASO:</S.IncidentLabel>
-          <S.IncidentText>Caso teste</S.IncidentText>
-
-          <S.IncidentLabel>DESCRIÇÃO:</S.IncidentLabel>
-          <S.IncidentText>Descrição teste</S.IncidentText>
-
-          <S.IncidentLabel>VALOR:</S.IncidentLabel>
-          <S.IncidentText>R$ 120,00</S.IncidentText>
-
-          <S.IncidentButton type="button">
-            <IconTrash size={20} color="#a8a8b3" />
-          </S.IncidentButton>
-        </S.IncidentItem>
+        {incidents.map((incident) => (
+          <Incident
+            key={incident.id}
+            title={incident.title}
+            description={incident.description}
+            value={incident.value}
+          />
+        ))}
       </S.IncidentContainer>
     </S.Container>
   );
