@@ -15,7 +15,7 @@ const INITIAL_FORM_STATE = {
 };
 
 function Register() {
-  const [values, setValue] = useForm(INITIAL_FORM_STATE);
+  const [values, resetForm, handleChange] = useForm(INITIAL_FORM_STATE);
   const history = useHistory();
 
   async function handleRegister(evt) {
@@ -23,19 +23,13 @@ function Register() {
 
     try {
       const response = await Http.post('ongs', values);
-      setValue(INITIAL_FORM_STATE);
+      resetForm();
       alert(`Seu ID de acesso: ${response.data.id}`);
 
       history.push('/');
     } catch (err) {
       alert('Erro no cadastro, tente novamente.');
     }
-  }
-
-  function handleChange(evt) {
-    const { name, value } = evt.target;
-
-    setValue({ [name]: value });
   }
 
   return (
