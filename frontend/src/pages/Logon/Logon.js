@@ -17,7 +17,7 @@ function Logon() {
     try {
       const response = await Http.post('sessions', values);
 
-      localStorage.setItem('ongInd', values.id);
+      localStorage.setItem('ongId', values.id);
       localStorage.setItem('ongName', response.data.name);
 
       alert('Login efetuado com sucesso! :D');
