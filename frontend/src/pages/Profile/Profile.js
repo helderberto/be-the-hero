@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { IconPower, IconTrash } from 'components/atoms';
 import * as S from './styled';
-
 import logoImg from 'assets/logo.svg';
 
 function Profile() {

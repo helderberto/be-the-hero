@@ -1,8 +1,6 @@
 import React from 'react';
-
 import * as S from './styled';
 import { IconLink, Button } from 'components/atoms';
-
 import logoImg from 'assets/logo.svg';
 import heroesImg from 'assets/heroes.png';
 
