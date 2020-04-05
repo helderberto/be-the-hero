@@ -7,8 +7,12 @@ import { Http } from 'interfaces';
 import { useForm } from 'hooks';
 import { useHistory } from 'react-router-dom';
 
+const INITIAL_STATE = {
+  id: '',
+};
+
 function Logon() {
-  const [values, resetForm, handleChange] = useForm();
+  const { values, resetForm, handleChange } = useForm(INITIAL_STATE);
   const history = useHistory();
 
   async function handleLogin(evt) {

@@ -6,7 +6,7 @@ import { Http } from 'interfaces';
 import { useForm } from 'hooks';
 import { useHistory } from 'react-router-dom';
 
-const INITIAL_FORM_STATE = {
+const INITIAL_STATE = {
   name: '',
   email: '',
   city: '',
@@ -15,7 +15,7 @@ const INITIAL_FORM_STATE = {
 };
 
 function Register() {
-  const [values, resetForm, handleChange] = useForm(INITIAL_FORM_STATE);
+  const { values, resetForm, handleChange } = useForm(INITIAL_STATE);
   const history = useHistory();
 
   async function handleRegister(evt) {

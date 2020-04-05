@@ -6,14 +6,14 @@ import { useForm } from 'hooks';
 import { Http } from 'interfaces';
 import { useHistory } from 'react-router-dom';
 
-const INITIAL_FORM_STATE = {
+const INITIAL_STATE = {
   title: '',
   description: '',
   value: '',
 };
 
 function NewIncident() {
-  const [values, resetForm, handleChange] = useForm(INITIAL_FORM_STATE);
+  const { values, resetForm, handleChange } = useForm(INITIAL_STATE);
   const ongId = localStorage.getItem('ongId');
   const history = useHistory();
 
