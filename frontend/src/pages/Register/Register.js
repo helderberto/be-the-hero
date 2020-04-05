@@ -3,7 +3,7 @@ import * as S from './styled';
 import { IconLink, Button } from 'components/atoms';
 import logoImg from 'assets/logo.svg';
 import { Http } from 'interfaces';
-import useForm from 'hooks/useForm';
+import { useForm } from 'hooks';
 import { useHistory } from 'react-router-dom';
 
 const INITIAL_FORM_STATE = {
