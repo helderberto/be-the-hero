@@ -2,12 +2,22 @@ import { useReducer } from 'react';
 import { mergeObject } from 'utils';
 
 function useForm(initialState = {}) {
-  const [values, setValue] = useReducer(
+  const [values, setValues] = useReducer(
     (state, newState) => mergeObject(state, newState),
     initialState
   );
 
-  return [values, setValue];
+  function handleChange(evt) {
+    const { name, value } = evt.target;
+
+    setValues({ [name]: value });
+  }
+
+  function resetForm() {
+    setValues(initialState);
+  }
+
+  return [values, resetForm, handleChange];
 }
 
 export default useForm;
