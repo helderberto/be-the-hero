@@ -2,8 +2,42 @@ import React from 'react';
 import * as S from './styled';
 import { IconLink, Button } from 'components/atoms';
 import logoImg from 'assets/logo.svg';
+import { Http } from 'interfaces';
+import useForm from 'hooks/useForm';
+import { useHistory } from 'react-router-dom';
+
+const INITIAL_FORM_STATE = {
+  name: '',
+  email: '',
+  city: '',
+  whatsapp: '',
+  uf: '',
+};
 
 function Register() {
+  const [values, setValue] = useForm(INITIAL_FORM_STATE);
+  const history = useHistory();
+
+  async function handleRegister(evt) {
+    evt.preventDefault();
+
+    try {
+      const response = await Http.post('ongs', values);
+      setValue(INITIAL_FORM_STATE);
+      alert(`Seu ID de acesso: ${response.data.id}`);
+
+      history.push('/');
+    } catch (err) {
+      alert('Erro no cadastro, tente novamente.');
+    }
+  }
+
+  function handleChange(evt) {
+    const { name, value } = evt.target;
+
+    setValue({ [name]: value });
+  }
+
   return (
     <S.Container>
       <S.Content>
@@ -22,14 +56,29 @@ function Register() {
           </IconLink>
         </S.Section>
 
-        <S.Form>
-          <S.Input placeholder="Nome da ONG" />
-          <S.Input type="email" placeholder="E-mail" />
-          <S.Input placeholder="Whatsapp" />
+        <S.Form onSubmit={handleRegister}>
+          <S.Input
+            name="name"
+            placeholder="Nome da ONG"
+            value={values.name}
+            onChange={handleChange}
+          />
+          <S.Input
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            value={values.email}
+            onChange={handleChange}
+          />
+          <S.Input
+            name="whatsapp"
+            placeholder="Whatsapp"
+            onChange={handleChange}
+          />
 
           <S.InputGroup>
-            <S.Input placeholder="Cidade" />
-            <S.InputUf placeholder="UF" />
+            <S.Input name="city" placeholder="Cidade" onChange={handleChange} />
+            <S.InputUf name="uf" placeholder="UF" onChange={handleChange} />
           </S.InputGroup>
 
           <Button type="submit">Cadastrar</Button>
